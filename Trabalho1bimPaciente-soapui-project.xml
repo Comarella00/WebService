@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="22a9e362-10e1-4c95-830d-811f807c18af" activeEnvironment="Default" name="Trabalho1bimPaciente" resourceRoot="" soapui-version="5.8.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="8f8fd7b4-6f54-4da9-8c72-f916c04294e4" wsaVersion="NONE" name="PacienteWSImplServiceSoapBinding" type="wsdl" bindingName="{http://trabalho1bim.unipar.com/}PacienteWSImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:9090/Trabalho1bim-1.0-SNAPSHOT/PacienteWSImpl?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9090/Trabalho1bim-1.0-SNAPSHOT/PacienteWSImpl?wsdl"><con:part><con:url>http://localhost:9090/Trabalho1bim-1.0-SNAPSHOT/PacienteWSImpl?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PacienteWSImplService" targetNamespace="http://trabalho1bim.unipar.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://trabalho1bim.unipar.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://trabalho1bim.unipar.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="buscarTodos" type="tns:buscarTodos"/>
+      <xs:element name="buscarTodosResponse" type="tns:buscarTodosResponse"/>
+      <xs:element name="editar" type="tns:editar"/>
+      <xs:element name="editarResponse" type="tns:editarResponse"/>
+      <xs:element name="inativar" type="tns:inativar"/>
+      <xs:element name="inativarResponse" type="tns:inativarResponse"/>
+      <xs:element name="inserir" type="tns:inserir"/>
+      <xs:element name="inserirResponse" type="tns:inserirResponse"/>
+      <xs:complexType name="inserir">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:pacienteInsertRequestDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pacienteInsertRequestDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bairro" type="xs:string"/>
+          <xs:element minOccurs="0" name="cep" type="xs:string"/>
+          <xs:element minOccurs="0" name="cidade" type="xs:string"/>
+          <xs:element minOccurs="0" name="complemento" type="xs:string"/>
+          <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="logradouro" type="xs:string"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="numero" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+          <xs:element minOccurs="0" name="uf" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="inserirResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:paciente"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="paciente">
+        <xs:sequence>
+          <xs:element name="ativo" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="bairro" type="xs:string"/>
+          <xs:element minOccurs="0" name="cep" type="xs:string"/>
+          <xs:element minOccurs="0" name="cidade" type="xs:string"/>
+          <xs:element minOccurs="0" name="complemento" type="xs:string"/>
+          <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="logradouro" type="xs:string"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="numero" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+          <xs:element minOccurs="0" name="uf" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="buscarTodos">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="buscarTodosResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:paciente"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:pacienteUpdateRequestDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pacienteUpdateRequestDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bairro" type="xs:string"/>
+          <xs:element minOccurs="0" name="cep" type="xs:string"/>
+          <xs:element minOccurs="0" name="cidade" type="xs:string"/>
+          <xs:element minOccurs="0" name="complemento" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="logradouro" type="xs:string"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="numero" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+          <xs:element minOccurs="0" name="uf" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editarResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:paciente"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="inativar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:pacienteCancelarRequestDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pacienteCancelarRequestDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="inativarResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:paciente"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BusinessException" type="tns:BusinessException"/>
+      <xs:complexType name="BusinessException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="BusinessException">
+    <wsdl:part element="tns:BusinessException" name="BusinessException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inserir">
+    <wsdl:part element="tns:inserir" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="editar">
+    <wsdl:part element="tns:editar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="editarResponse">
+    <wsdl:part element="tns:editarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inativar">
+    <wsdl:part element="tns:inativar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inserirResponse">
+    <wsdl:part element="tns:inserirResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarTodos">
+    <wsdl:part element="tns:buscarTodos" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inativarResponse">
+    <wsdl:part element="tns:inativarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarTodosResponse">
+    <wsdl:part element="tns:buscarTodosResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PacienteWSImpl">
+    <wsdl:operation name="inserir">
+      <wsdl:input message="tns:inserir" name="inserir"></wsdl:input>
+      <wsdl:output message="tns:inserirResponse" name="inserirResponse"></wsdl:output>
+      <wsdl:fault message="tns:BusinessException" name="BusinessException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTodos">
+      <wsdl:input message="tns:buscarTodos" name="buscarTodos"></wsdl:input>
+      <wsdl:output message="tns:buscarTodosResponse" name="buscarTodosResponse"></wsdl:output>
+      <wsdl:fault message="tns:BusinessException" name="BusinessException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="editar">
+      <wsdl:input message="tns:editar" name="editar"></wsdl:input>
+      <wsdl:output message="tns:editarResponse" name="editarResponse"></wsdl:output>
+      <wsdl:fault message="tns:BusinessException" name="BusinessException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="inativar">
+      <wsdl:input message="tns:inativar" name="inativar"></wsdl:input>
+      <wsdl:output message="tns:inativarResponse" name="inativarResponse"></wsdl:output>
+      <wsdl:fault message="tns:BusinessException" name="BusinessException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PacienteWSImplServiceSoapBinding" type="tns:PacienteWSImpl">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="inserir">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="inserir">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="inserirResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTodos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="buscarTodos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarTodosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="editar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="editar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="editarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="inativar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="inativar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="inativarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <soap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PacienteWSImplService">
+    <wsdl:port binding="tns:PacienteWSImplServiceSoapBinding" name="PacienteWSImplPort">
+      <soap:address location="http://localhost:9090/Trabalho1bim-1.0-SNAPSHOT/PacienteWSImpl"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9090/Trabalho1bim-1.0-SNAPSHOT/PacienteWSImpl</con:endpoint></con:endpoints><con:operation id="cb86918b-75b3-494e-900e-cac2a0c86d21" isOneWay="false" action="" name="buscarTodos" bindingOperationName="buscarTodos" type="Request-Response" outputName="buscarTodosResponse" inputName="buscarTodos" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3683bf79-2fc0-44fc-8e8f-65afd660189d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/Trabalho1bim-1.0-SNAPSHOT/PacienteWSImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trab="http://trabalho1bim.unipar.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <trab:buscarTodos/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://trabalho1bim.unipar.com/PacienteWSImpl/buscarTodos"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b333d6cd-3445-41b7-a52b-2574e396c196" isOneWay="false" action="" name="editar" bindingOperationName="editar" type="Request-Response" outputName="editarResponse" inputName="editar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="eb5cb971-1148-4df2-a8dc-7b0161927d98" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/Trabalho1bim-1.0-SNAPSHOT/PacienteWSImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trab="http://trabalho1bim.unipar.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <trab:editar>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <bairro>aaaaaaaaaa</bairro>\r
+            <!--Optional:-->\r
+            <cep>46516</cep>\r
+            <!--Optional:-->\r
+            <cidade>AAAAAAA</cidade>\r
+            <!--Optional:-->\r
+            <complemento>AAAAAAAAAAAA</complemento>\r
+            <!--Optional:-->\r
+            <id>2</id>\r
+            <!--Optional:-->\r
+            <logradouro>aaaaaaaaaaaaaaa</logradouro>\r
+            <!--Optional:-->\r
+            <nome>nicoli</nome>\r
+            <!--Optional:-->\r
+            <numero>54</numero>\r
+            <!--Optional:-->\r
+            <telefone>651651621351</telefone>\r
+            <!--Optional:-->\r
+            <uf>SC</uf>\r
+         </arg0>\r
+      </trab:editar>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://trabalho1bim.unipar.com/PacienteWSImpl/editar"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="41c1c4ec-df97-46ac-be50-6ca6b504ae0b" isOneWay="false" action="" name="inativar" bindingOperationName="inativar" type="Request-Response" outputName="inativarResponse" inputName="inativar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fa0784bd-1f46-4c7c-bddd-5d311ffc5bf9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/Trabalho1bim-1.0-SNAPSHOT/PacienteWSImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trab="http://trabalho1bim.unipar.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <trab:inativar>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <id>1</id>\r
+         </arg0>\r
+      </trab:inativar>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://trabalho1bim.unipar.com/PacienteWSImpl/inativar"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="cf732e2c-4b45-4972-8119-58ee37a213e0" isOneWay="false" action="" name="inserir" bindingOperationName="inserir" type="Request-Response" outputName="inserirResponse" inputName="inserir" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="deb4a61c-52e3-40c7-bc84-95c493f1afdb" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/Trabalho1bim-1.0-SNAPSHOT/PacienteWSImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trab="http://trabalho1bim.unipar.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <trab:inserir>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <bairro>?</bairro>\r
+            <!--Optional:-->\r
+            <cep>?</cep>\r
+            <!--Optional:-->\r
+            <cidade>?</cidade>\r
+            <!--Optional:-->\r
+            <complemento>?</complemento>\r
+            <!--Optional:-->\r
+            <cpf>?</cpf>\r
+            <!--Optional:-->\r
+            <email>?</email>\r
+            <!--Optional:-->\r
+            <logradouro>?</logradouro>\r
+            <!--Optional:-->\r
+            <nome>?</nome>\r
+            <!--Optional:-->\r
+            <numero>?</numero>\r
+            <!--Optional:-->\r
+            <telefone>?</telefone>\r
+            <!--Optional:-->\r
+            <uf>?</uf>\r
+         </arg0>\r
+      </trab:inserir>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://trabalho1bim.unipar.com/PacienteWSImpl/inserir"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
